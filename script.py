@@ -54,7 +54,7 @@ def get_vector_store_from_multiple_pdfs(pdf_docs):
 
 
 def get_conversation_chain(vector_store):
-    llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key='',
+    llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key='Enter your API key',
                                  temperature=0.2)
 
     template = """Answer the question based on the following context:
@@ -88,7 +88,7 @@ def user_input(user_question):
 
 def main():
     st.set_page_config('chat with multiple pdf')
-    st.header('RandomTrees Chatbot 💬')
+    st.header('Chatbot 💬')
     user_question = st.text_input("Ask a Question")
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
